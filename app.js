@@ -9,21 +9,14 @@ const modalView = document.getElementById('modal');
 
 searchButton.addEventListener("click", () => {
     if (!searchText.value) {
-        // alert("There is nothing to search");
-        // const modal = document.getElementById("myModal");
-        // modal.style.display = "block";
-        // window.onclick = function (event) {
-        //     if (event.target == modal) {
-        //         modal.style.display = "none";
-        //     }
-        // }
-        // modalView.innerHTML = `<h2>There is nothing to search</h2>`;
-
-        searchResult.innerHTML = `
-        <div>
-        <h1>jhfjhdfj</h1>
-        </div>
-        `;
+        const modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        modalView.innerHTML = `<h2>There is nothing to search</h2>`;
     }
     else {
         fetchValue(searchText.value);
